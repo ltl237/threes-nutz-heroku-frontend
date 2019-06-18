@@ -17,7 +17,7 @@ class PostContainer extends Component {
     // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/posts`)
     .then(res => res.json())
     .then(data => {
-      console.log("Daat",data);
+
       this.setState({
         posts: data
       })

@@ -96,7 +96,7 @@ class PostModal extends Component {
                 </section>
                 <div className="comment-like-wrapper">
                   <LikeButton setCurrentUserAfter={this.props.setCurrentUserAfter} currentUser={this.props.currentUser} addLike={this.props.addLike} post={this.props.post} user={this.props.post.user}/>
-                  <NewCommentForm handleAddComment={this.handleAddComment} post={this.props.post} user={this.props.post.user} addNewComment={this.props.addNewComment}/>
+                  <NewCommentForm currentUser={this.props.currentUser} handleAddComment={this.handleAddComment} post={this.props.post} user={this.props.post.user} addNewComment={this.props.addNewComment}/>
                 </div>
                   <div className="comments-div">
                     {
