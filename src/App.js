@@ -22,7 +22,7 @@ class App extends Component {
   componentDidMount() {
     const token = localStorage.getItem('token')
     if (token) {
-      fetch("http://localhost:3000/api/v1/auto_login", {
+      fetch("https://threes-nutz-backend.herokuapp.com/auto_login", {
       // fetch("https://threes-nutz-backend.herokuapp.com/api/v1/auto_login", {
         headers: {
           "Authorization": token
@@ -51,7 +51,7 @@ class App extends Component {
   addNewComment = (commentObj) => {
     // fetch('https://threes-nutz-backend.herokuapp.com/api/v1/comments', {
     console.log(commentObj);
-    fetch("http://localhost:3000/api/v1/comments", {
+    fetch("https://threes-nutz-backend.herokuapp.com/comments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ class App extends Component {
   }
 
   createNewPost = (postObj) => {
-    fetch('http://localhost:3000/api/v1/posts', {
+    fetch('https://threes-nutz-backend.herokuapp.com/posts', {
     // fetch('https://threes-nutz-backend.herokuapp.com/api/v1/posts', {
       method: "POST",
       headers: {

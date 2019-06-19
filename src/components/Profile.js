@@ -19,7 +19,7 @@ class Profile extends Component {
 
 
   componentWillMount() {
-    fetch(`http://localhost:3000/api/v1/posts`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/posts`)
     .then(res => res.json())
     .then(postsData => {
       let allCommentDict = {}
@@ -33,7 +33,7 @@ class Profile extends Component {
       })
     })
 
-    fetch(`http://localhost:3000/api/v1/comments`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/comments`)
     .then(res => res.json())
     .then(commentsData => {
       this.setState({
@@ -47,15 +47,20 @@ class Profile extends Component {
     let yourComments = {}
     let profileId = this.state.profileToView.id
     console.log("proftoview",this.state.profileToView);
+    // console.log(document.querySelector('#user-' + this.state.profileToView.id));
+    // debugger
     let h2WithUserId = document.querySelector('user-')//.split('-')[1]
 
     this.state.commentsArray.map(comment => {
       return this.state.postsArray.map(post => {
 
+        // debugger
         if (post.id === comment.post_id && comment.user_id === parseInt(document.querySelector("#user").dataset.profileId)) {
           yourComments[post.id] = comment
           postsYouCommentedOn.push(post)
+
         }
+        // debugger
       })
     })
 
@@ -74,6 +79,8 @@ class Profile extends Component {
 
 
   render() {
+    // console.log(this.state);
+    // this.getCommentsAndPosts()
     return (
       <div className="profile-container">
         <div className="profile-image">

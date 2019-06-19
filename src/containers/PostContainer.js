@@ -14,7 +14,7 @@ class PostContainer extends Component {
   // https://threes-nutz-backend.herokuapp.com/api/v1/
 
   componentDidMount() {
-    fetch(`http://localhost:3000/api/v1/posts`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/posts`)
     // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/posts`)
     .then(res => res.json())
     .then(data => {

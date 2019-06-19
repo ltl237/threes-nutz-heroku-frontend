@@ -16,7 +16,7 @@ class CommentsContainer extends Component {
 
 
   componentWillMount() {
-    fetch(`http://localhost:3000/api/v1/posts`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/posts`)
     .then(res => res.json())
     .then(postsData => {
       let allCommentDict = {}
@@ -30,7 +30,7 @@ class CommentsContainer extends Component {
       })
     })
 
-    fetch(`http://localhost:3000/api/v1/comments`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/comments`)
     .then(res => res.json())
     .then(commentsData => {
       this.setState({
