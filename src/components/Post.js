@@ -34,7 +34,7 @@ class Post extends Component {
   }
 
   addLike = () => {
-    fetch("https://threes-nutz-backend.herokuapp.com/likes", {
+    fetch("https://threes-nutz-backend.herokuapp.com/api/v1/likes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ class Post extends Component {
   }
 
   deleteLike = (likeID) => {
-    fetch(`https://threes-nutz-backend.herokuapp.com/likes/${likeID}`, {
+    fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/likes/${likeID}`, {
       method: "DELETE"
     })
     this.setState({

@@ -34,7 +34,7 @@ class PostModal extends Component {
   }
 
   componentDidMount() {
-    fetch('https://threes-nutz-backend.herokuapp.com/users')
+    fetch('https://threes-nutz-backend.herokuapp.com/api/v1/users')
     .then(res => res.json())
     .then(data => {
       this.setState({

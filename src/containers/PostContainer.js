@@ -11,11 +11,11 @@ class PostContainer extends Component {
     postToModalize: {},
     commentsOnThisPost: []
   }
-  // https://threes-nutz-backend.herokuapp.com/api/v1/
+  // https://threes-nutz-backend.herokuapp.com/api/v1/api/v1/
 
   componentDidMount() {
-    fetch(`https://threes-nutz-backend.herokuapp.com/posts`)
-    // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/posts`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/posts`)
+    // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/api/v1/posts`)
     .then(res => res.json())
     .then(data => {
       this.setState({

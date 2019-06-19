@@ -7,7 +7,7 @@ class Signup extends React.Component {
     username: "",
     password: ""
   }
-  // https://threes-nutz-backend.herokuapp.com/api/v1/
+  // https://threes-nutz-backend.herokuapp.com/api/v1/api/v1/
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
@@ -16,8 +16,8 @@ class Signup extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    fetch("https://threes-nutz-backend.herokuapp.com/users", {
-    // fetch("https://threes-nutz-backend.herokuapp.com/api/v1/users", {
+    fetch("https://threes-nutz-backend.herokuapp.com/api/v1/users", {
+    // fetch("https://threes-nutz-backend.herokuapp.com/api/v1/api/v1/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

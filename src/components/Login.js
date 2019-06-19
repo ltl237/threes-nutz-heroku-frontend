@@ -14,11 +14,11 @@ class Login extends React.Component {
       [event.target.name]: event.target.value
     })
   }
-  // https://threes-nutz-backend.herokuapp.com/api/v1/
+  // https://threes-nutz-backend.herokuapp.com/api/v1/api/v1/
   handleSubmit = (event) => {
     event.preventDefault()
-    fetch("https://threes-nutz-backend.herokuapp.com/login", {
-    // fetch("https://threes-nutz-backend.herokuapp.com/api/v1/login", {
+    fetch("https://threes-nutz-backend.herokuapp.com/api/v1/login", {
+    // fetch("https://threes-nutz-backend.herokuapp.com/api/v1/api/v1/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
