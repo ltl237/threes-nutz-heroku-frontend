@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Faker from 'faker'
+import Post from './Post'
+import PostModal from './PostModal'
+//<Post changeProfileToView={this.props.changeProfileToView} profileToView={this.props.profileToView} currentUser={this.props.currentUser} setCurrentUserAfter={this.props.setCurrentUserAfter} addNewComment={this.props.addNewComment} onClick={this.viewSinglePost} key={post.id} post={post} />
 
 
 class Profile extends Component {
@@ -55,11 +58,14 @@ class Profile extends Component {
   const myPosts = this.state.postsArray.filter(post => {
     return Object.keys(yourComments).includes(post.id.toString())
   })
-    // console.log(check);
-    // debugger
+
   return myPosts.map(post =>{
+
     return <div>{post.title} - {yourComments[post.id].content}</div>
   })
+  // return myPosts.map(post => {
+  //   return <Post changeProfileToView={this.props.changeProfileToView} profileToView={this.props.profileToView} currentUser={this.props.currentUser} setCurrentUserAfter={this.props.setCurrentUserAfter} addNewComment={this.props.addNewComment} onClick={this.viewSinglePost} key={post.id} post={post} />
+  // })
 
   }
 
