@@ -20,8 +20,8 @@ class Profile extends Component {
 
   componentWillMount() {
 
-    // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/posts`)
-    fetch(`http://localhost:3000/api/v1/posts`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/posts`)
+    // fetch(`http://localhost:3000/api/v1/posts`)
     .then(res => res.json())
     .then(postsData => {
       let allCommentDict = {}
@@ -35,8 +35,8 @@ class Profile extends Component {
       })
     })
 
-    // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/comments`)
-    fetch(`http://localhost:3000/api/v1/comments`)
+    fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/comments`)
+    // fetch(`http://localhost:3000/api/v1/comments`)
     .then(res => res.json())
     .then(commentsData => {
       this.setState({
