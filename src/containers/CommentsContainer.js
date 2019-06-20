@@ -17,7 +17,7 @@ class CommentsContainer extends Component {
 
   componentWillMount() {
     // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/posts`)
-    fetch(`https://localhost:3000/api/v1/posts`)
+    fetch(`http://localhost:3000/api/v1/posts`)
     .then(res => res.json())
     .then(postsData => {
       let allCommentDict = {}
@@ -32,7 +32,7 @@ class CommentsContainer extends Component {
     })
 
     // fetch(`https://threes-nutz-backend.herokuapp.com/api/v1/comments`)
-    fetch(`https://localhost:3000/api/v1/comments`)
+    fetch(`http://localhost:3000/api/v1/comments`)
     .then(res => res.json())
     .then(commentsData => {
       this.setState({
@@ -45,7 +45,7 @@ class CommentsContainer extends Component {
     let postsYouCommentedOn = []
     let yourComments = {}
     let profileId = this.state.profileToView.id
-    console.log("proftoview",this.state.profileToView);
+    // console.log("proftoview",this.state.profileToView);
     let h2WithUserId = document.querySelector('user-')//.split('-')[1]
 
     this.state.commentsArray.map(comment => {

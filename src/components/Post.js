@@ -63,16 +63,17 @@ class Post extends Component {
   }
 
   handleUserClick = (event) => {
-    event.preventDefault()
-    console.log(event.target.otherUser);
+    // event.preventDefault()
+    // console.log(event.target.otherUser);
     if (event.target.name === "otherUser") {
       const userObj = this.props.post.user
       this.props.changeProfileToView(userObj)
     } else {
       const userObj = this.props.post.user
       this.props.changeProfileToView(userObj)
+      console.log("userobj",userObj);
     }
-
+    debugger
     document.querySelector("body").classList.toggle("modal-open")
 
     // $('.modal').modal('hide')

@@ -53,8 +53,8 @@ class PostModal extends Component {
 
   handleUserClick = (event, userWhoCommented) => {
     event.preventDefault()
-    const userObj = this.props.post.user
-    // const userObj = theUser
+
+    const userObj = userWhoCommented
     this.props.changeProfileToView(userObj)
     document.querySelector("body").classList.toggle("modal-open")
   }
@@ -62,9 +62,9 @@ class PostModal extends Component {
   renderSingleComment = (comment) => {
 
     theUser = this.findUser(comment.user_id)
-
+    let userWhoCommented = this.findUser(comment.user_id)
     if (theUser) {
-      return <li key={comment.id}>{comment.content} - <a onClick={this.handleUserClick} href="">{theUser.username}</a></li>
+      return <li key={comment.id}>{comment.content} - <a id={"uc-" + theUser.id} onClick={(event) => this.handleUserClick(event, userWhoCommented)} >{theUser.username}</a></li>
     } else {
       return <li key={comment.id}>{comment.content}></li>
     }
@@ -85,7 +85,7 @@ class PostModal extends Component {
                   </div>
                   <div className="title">
                     <strong><p style={{fontSize:"150%", marginLeft:"10%", marginTop:"2%", float:"right", width:"100%"}}>{this.props.post.title}</p></strong>
-                    <h4 className="media-heading" style={{float:"left", marginLeft:"2%", marginTop:"5%"}}>Author: {this.props.post.user ? <a onClick={this.handleUserClick} href=""> {this.props.post.user.username} </a> : null}
+                    <h4 className="media-heading" style={{float:"left", marginLeft:"2%", marginTop:"5%"}}>Author: {this.props.post.user ? <a onClick={(event) => this.handleUserClick(event,this.props.post.user)} href=""> {this.props.post.user.username} </a> : null}
                     <br/><p className="post-user" style={{fontSize:'10px', float:"left", marginLeft: "5%"}}>Created: <TimeAgo datetime={this.props.post.created_at}/></p></h4>
                   </div>
                 </section>
